@@ -1,0 +1,44 @@
+<!-- views/sakaban.ejs -->
+
+<link rel='stylesheet' href='/stylesheets/sakaban.css' />
+
+<body>
+    <h1>ニパッとするアプリ</h1>
+    <div class="container">
+        
+        <%= colorValue %>
+        <h2>
+            <p id="wordList" class="hidden">
+                <%= randomWord.word %>
+            </p>
+        </h2>
+        <img id="switch" src="images/basupisu2.png" alt="Switch" onclick="changeImg()">
+        
+        <a href="/colors/add" class="button-link">セリフ追加するか？</a>
+
+    </div>
+
+    <script>
+        function changeImg() {
+            var switchImg = document.getElementById("switch");
+            var wordList = document.getElementById("wordList");
+
+            // 画像のsrc属性を切り替える
+            if (switchImg.src.includes("images/basupisu2.png")) {
+                switchImg.src = "images/basupisu1.png";
+                wordList.style.display = 'block';
+            } else {
+                switchImg.src = "images/basupisu2.png";
+                wordList.style.display = 'none';
+                location.reload();
+            }
+
+            // クリック時にクラスを切り替える
+            switchImg.classList.toggle("on_switch");
+        }
+
+        function wordAdd(){
+            render("colors/add");
+        }
+    </script>
+</body>

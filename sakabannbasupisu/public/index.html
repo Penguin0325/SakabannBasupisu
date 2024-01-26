@@ -1,0 +1,41 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/hello.css' />
+    <title>Image Toggle</title>
+</head>
+<body>
+
+    <img id="switch" src="images/basupisu2.png" alt="Switch" onclick="changeImg()">
+
+    <% words.forEach(word => { %>
+        <li><%= word.word %></li>
+    <% }); %>
+
+    <script>
+        function changeImg() {
+        var switchImg = document.getElementById("switch");
+
+        // 画像のsrc属性を切り替える
+        if (switchImg.src.includes("images/basupisu2.png")) {
+            switchImg.src = "images/basupisu1.png";
+        } else {
+            switchImg.src = "images/basupisu2.png";
+        }
+
+        // クリック時にクラスを切り替える
+        switchImg.classList.toggle("on_switch");
+        }
+
+    // サーバーから渡されたデータを使ってHTMLを生成する例
+    // var words = ;
+    // wordsを使ってHTMLを生成する処理を追加
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+#switch{
+  width: 20cm;
+  height: 20cm;
+  
+}
+img{
+  margin-top: -230px;
+  margin-left: -60px;
+}
+
+/* クリックで表示させるテキストを隠す */
+.hidden {
+  display: none;
+}
+
+h2 {
+  position: relative;
+  padding: 1rem 1rem 1rem 1.5rem;
+  height: 85px;
+  border-radius: 30px;
+  background-color: #9CC7CE;
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+h2:before,
+h2:after {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #9CC7CE;
+  content: "";
+}
+
+h2:before {
+  top: 110%;
+  left: 40px;
+  height: 15px;
+  width: 15px;
+}
+
+h2:after {
+  top: 150%;
+  left: 50px;
+  height: 10px;
+  width: 10px;
+}
